@@ -1,0 +1,1150 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>LIVE-Vaccine</title>
+<style>
+:root {
+    --NightBackground: #141832;
+    --NightBoxBackground: #1f264d;
+    --NightBoxBorder: #6c729b;
+    --NightfontLightGray: #bdc0c9;
+    --OnfocusYellow: #f9db99;
+}
+
+
+body {background-color: var(--NightBackground);}
+p {color: var(--NightfontLightGray);
+   font-size: 13px;
+   width: 510px;
+   margin-bottom: 60px;}
+
+
+#margin {margin: 30px;}
+#left {float: left;}
+#right {float: right;}
+
+.logo {width: 242px;
+       height: auto;
+       display: block;
+       margin-bottom: 15px;}
+
+#wrap {width: 876px;
+           margin: auto;
+           margin-top: 50px;}
+
+#leftframeDiv {width: 242px;
+               float: left;
+               height: auto;
+               position: fixed;}
+
+#rightframeDiv {width:510px;
+                height: auto;
+                float: right;}
+
+#menuBox {width: 242px;
+       height: auto;
+       background-color: var(--NightBoxBackground);
+       border: 2px solid var(--NightBoxBorder);
+       border-radius: 10px;
+       margin-bottom: 14px;}
+
+#menuBox ul {list-style-type: none;
+             padding: 0px;
+             margin: 0px;}
+
+#menuBox li {position: relative;
+            transition-property: background-color, color;
+            transition-duration: 0.5s;
+            transition-timing-function: ease-out;
+            text-decoration: none;
+            width: 227px;
+            height: 54px;
+            font-size: 18px;
+            color: var(--NightfontLightGray);
+            line-height: 53px;
+            padding-left: 15px;
+            cursor: pointer;}
+
+#menuBox li:hover {position: relative;
+                   transition-property: background-color, color;
+                   transition-duration: 0.5s;
+                   transition-timing-function: ease-out;
+                  	background-color: #383d6d;
+                  	color: white;
+                    font-weight: bold;}
+
+
+#menuBox li:first-of-type:hover {border-radius: 7px 7px 0 0;}
+
+#menuBox li:last-of-type:hover {border-radius: 0 0 7px 7px;}
+
+
+
+
+
+#rightTopBox {width: 510px;
+           height: 108px;
+           background-color: var(--NightBoxBackground);
+           border: 2px solid var(--NightBoxBorder);
+           border-radius: 15px;
+           margin-bottom: 24px;}
+
+.divwrap {width: 127.5px;
+          height: auto;
+          margin: 15px auto;
+          float: left;}
+
+.divwrap span:first-of-type {font-size: 15px;
+                                 color: var(--NightfontLightGray);
+                                 margin: 0 auto;
+                                 display: block;
+                                 text-align: center;}
+
+.divwrap span:last-of-type {font-size: 32px;
+                                margin: 0 auto;
+                                display: block;
+                                text-align: center;
+                                font-weight: bolder;}
+
+.divwrap div {width: 40px;
+              height: 15px;
+              padding: 0 3px;
+              font-size: 8px;
+              color: var(--NightBoxBorder);
+              background-color: var(--NightBackground);
+              border-radius: 7.5px;
+              margin: 0 auto;
+              text-align: center;
+              line-height: 15px;}
+
+#inoculatorTotal {color: #2d8723;
+                  font-size: 25px;
+                  text-align: center;
+                  margin-top: 5px;
+                  margin-bottom: 5px;}
+
+#mildcaseTotal {color: var(--NightfontLightGray);}
+
+#seriouscaseTotal {color: #3e6dcc;}
+
+#deathTotal {color: #dd3e3e;}
+
+
+
+
+
+
+#rightCenterBox {width: 510px;
+              height: 143px;
+              background-color: var(--NightBoxBackground);
+              border: 2px solid var(--NightBoxBorder);
+              border-radius: 15px;
+              margin-bottom: 24px;}
+
+.top {width: 450px;
+      height: 110px;
+      margin: auto;
+      margin-top: 18px;}
+
+.top div {width: 225px;
+          height: 80px;
+          margin-top: 20px;}
+
+.top div div {width: 110px;
+              height: 80px;
+              margin-top: 0;
+              float: left;}
+
+.top span {color: var(--NightfontLightGray);
+           text-align: center;
+           width: 110px;
+           display: block;}
+.top span:first-of-type {font-size: 12px;}
+.top span:nth-of-type(2) {font-size: 40px;
+                          font-weight: bolder;}
+.top span:last-of-type {font-size: 40px;}
+
+#daywrap {width: 90px;
+          height: auto;
+          margin-top: 6px;;
+          float: right;}
+
+#daywrap div {width: 90px;
+              height: 10px;
+              background-color: var(--NightBackground);
+              border-radius: 10px;
+              margin: 5px;
+              padding-top: 4px;
+              padding-bottom: 4px;}
+
+#daywrap div span {width: auto;
+                   font-size: 10px;
+                   line-height: 10px;
+                   float: left;
+                   margin-left: 7px;}
+
+#daywrap div span:last-of-type{float: right;
+                               margin-left: 0;
+                               margin-right: 7px;
+                               color: #dd3e3e;}
+
+
+
+
+#rightgraphBox {width: 510px;
+             height: 470px;
+             background-color: var(--NightBoxBackground);
+             border: 2px solid var(--NightBoxBorder);
+             border-radius: 15px;
+             margin-bottom: 24px;
+             padding-top: 20px;}
+
+#rightgraphBox2 {width: 510px;
+                 height: 470px;
+                 background-color: var(--NightBoxBackground);
+                 border: 2px solid var(--NightBoxBorder);
+                 border-radius: 15px;
+                 margin-bottom: 24px;
+                 padding-top: 20px;
+                 display: none;}
+
+#graphimg1 {width: 480px;
+            height: 350px;
+            margin: 0 auto;
+            margin-top: 120px;
+            background-image: url(graph/pf_inoculator.png);
+            background-size: cover;}
+
+#graphimg2 {width: 480px;
+            height: 350px;
+            margin: 0 auto;
+            margin-top: 120px;
+            background-image: url(graph/pf_inoculator.png);
+            background-size: cover;}
+
+
+#graphmenuBox {width: 480px;
+               height: 20px;
+               margin-right: 20px;}
+
+
+
+.menuButton   {position: relative;
+              transition-property: border-color, color;
+              transition-duration: 0.5s;
+              transition-timing-function: ease-out;
+            	width: auto;
+            	height: 30px;
+            	border: 2px solid var(--NightBoxBorder);
+            	border-radius: 18px;
+            	color: var(--NightBoxBorder);
+            	float: left;
+              margin-bottom: 10px;
+            	margin-left: 15px;
+              padding-left: 5px;
+            	font-size: 12px;
+            	background-color: var(--NightBoxBackground);
+              font-weight: bold;
+              text-align: center;
+              text-decoration: none;
+              cursor: pointer;}
+
+.menuButton:hover {position: relative;
+                   transition-property: border-color, color;
+                   transition-duration: 0.5s;
+                   transition-timing-function: ease-out;
+                  	border: 2px solid var(--OnfocusYellow);
+                  	color: var(--OnfocusYellow);}
+
+
+
+#graphmenu:nth-of-type(2) {width: 70px;}
+
+
+
+#graphAddicationBox {position: relative;
+                     transition-property: background-color;
+                     transition-duration: 0.5s;
+                     transition-timing-function: ease-out;
+                     text-decoration: none;
+                     width: 510px;
+                     height: 62px;
+                     background-color: var(--NightBoxBackground);
+                     border: 2px solid var(--NightBoxBorder);
+                     border-radius: 15px;
+                     margin-bottom: 24px;
+                     font-size: 16px;
+                     cursor: pointer;}
+
+#graphAddicationBox:hover {position: relative;
+                           transition-property: background-color;
+                           transition-duration: 0.5s;
+                           transition-timing-function: ease-out;
+                           background-color: #383d6d;}
+
+
+
+
+#graphAddicationBox div {width: 96.85px;
+                         height: 21px;
+                         padding: 20px 206px;}
+
+#graphAddicationBox span:last-of-type {color: var(--NightBoxBorder);}
+
+
+
+
+
+#locationVaccineChartBox {width: 510px;
+                          height: auto;
+                          background-color: var(--NightBoxBackground);
+                          border: 2px solid var(--NightBoxBorder);
+                          border-radius: 15px;
+                          margin-bottom: 30px;}
+
+
+#mapchart {width: 450px;
+           height: 47px;
+           margin: 35px auto;
+           margin-bottom: 10px;
+           background-color: var(--NightBackground);
+           border-radius: 12px;}
+
+#mapchart div {position: relative;
+               transition-property: font-weight, border-color, backgrond-color, color;
+               transition-duration: 0.5s;
+               transition-timing-function: ease-out;
+               text-decoration: none;
+               width: 221px;
+               height: 43px;
+               margin: 0;
+               padding: 0;
+               font-size: 16px;
+               text-align: center;
+               line-height: 43px;
+               color: var(--NightfontLightGray);
+               border-radius: 12px;
+               border: 2px solid #141832;
+               float: left;
+               background-color: var(--NightBackground)}
+
+#mapchart div:hover {position: relative;
+                     transition-property: font-weight, border-color, backgrond-color, color;
+                     transition-duration: 0.5s;
+                     transition-timing-function: ease-out;
+                     text-decoration: none;
+                     width: 221px;
+                     height: 43px;
+                     font-weight: bold;
+                     color: white;
+                     border: 2px solid var(--NightBoxBorder);
+                     background-color: #383d6d;}
+
+#mapdiv {position: relative;
+         width: 510px;
+         height: 800px;
+         background-image: url(map.png);
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: cover;}
+
+.which {background: url('which.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        float: left;
+        cursor: pointer;}
+
+.which:hover {position: relative;
+              transition-property: background;
+              transition-duration: 0.5s;
+              transition-timing-function: ease-out;
+              text-decoration: none;
+              background: url('which_hover.png');
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;}
+
+.which .popupdiv {display: none;
+                  position: absolute;
+                  width: 200px;
+                  height: 215px;
+                  margin-left: 165px;
+                  margin-top: 200px;
+                  border: 2px solid var(--NightBoxBorder);
+                  background-color: var(--NightBackground);
+                  border-radius: 12px;
+                  z-index: 1;}
+
+.popupdiv h2 {color: var(--NightfontLightGray);
+              font-weight: bold;
+              margin-left: 15px;}
+
+.popupdiv div {margin: 0 15px;
+               width: 170px;
+               height: 25px;}
+
+.popupdiv div:first-of-type {color: var(--NightBoxBorder);}
+.popupdiv div:nth-of-type(2) {color: #2D8723;}
+.popupdiv div:last-of-type {color: #DD3E3E;}
+
+.popupdiv div span {display: block;}
+.popupdiv div span:first-of-type {float: left;}
+.popupdiv div span:last-of-type {float: right;}
+
+.which:hover .popupdiv {display: block;}
+
+.popupdiv p {font-weight: bold;
+             font-size: 30px;
+             color: #3E6DCC;
+             margin: 15px;
+             float: right;}
+
+#Seoul {left: 160px;
+        top: 145px;}
+#Seoul_popup {bottom: -150px;
+              left: -110px;}
+
+
+#Incheon {left: 80px;
+          top: 135px;}
+#Incheon_popup {bottom: -240px;
+                left: -200px;}
+
+
+#Gyeonggi {left: 120px;
+           top: 190px;}
+#Gyeonggi_popup {bottom: -200px;
+                 left: -120px;}
+
+
+#Gangwon {left: 200px;
+          top: 90px;}
+#Gangwon_popup {bottom: -230px;
+                left: -220px;}
+
+
+#Chungcheongnam {right: 20px;
+                 top: 280px;}
+#Chungcheongnam_popup {bottom: -120px;
+
+                       left: -110px;}
+
+#Chungcheongbuk {left: 50px;
+                 top: 250px;}
+#Chungcheongbuk_popup {bottom: -50px;
+                       left: -120px;}
+
+
+#Daejeon {right: 35px;
+          top: 310px;}
+#Daejeon_popup {bottom: -200px;
+                left: -110px;}
+
+
+#Gyeongsangbuk {left: 100px;
+                top: 300px;}
+#Gyeongsangbuk_popup {left: -380px;
+                      bottom: -200px;}
+
+
+#Jeollabuk {right: 150px;
+            top: 400px;}
+#Jeollabuk_popup {left: -100px;
+                  bottom: -200px;}
+
+
+#Jeollanam {right: 160px;
+            top: 520px;}
+#Jeollanam_popup {left: -110px;
+                  bottom: 20px;}
+
+
+#Gwangju {top: 490px;
+          right: 260px;}
+#Gwangju_popup {left: -110px;
+                bottom: 20px;}
+
+
+#Gyeongsangnam {top: 470px;
+               right: 150px;}
+#Gyeongsangnam_popup {left: -380px;
+                      bottom: 20px;}
+
+
+
+#Daegu {top: 350px;
+        left: 350px;}
+#Daegu_popup {left: -380px;
+              bottom: 20px;}
+
+
+#Ulsan {top: 380px;
+        left: 380px;}
+#Ulsan_popup {left: -380px;
+              bottom: -10px;}
+
+
+#Busan {top: 430px;
+        left: 340px;}
+#Busan_popup {left: -380px;
+              bottom: -10px;}
+
+
+#Jeju {top: 670px;
+       right: 70px;}
+#Jeju_popup {left: -120px;
+             bottom: 50px;}
+
+
+
+
+
+#popupOn {display: block;
+          position: absolute;
+          width: 200px;
+          height: 250px;
+          margin-left: 165px;
+          margin-top: 200px;
+          border: 2px solid var(--NightBoxBorder);
+          background-color: var(--NightBackground);
+          border-radius: 12px;
+          z-index: 1;
+          cursor: pointer;}
+
+
+.header {color: var(--NightfontLightGray);
+         font-weight: bolder;
+         font-size: 30px;
+         margin-left: 10px;
+         margin-top: 10px;}
+
+
+@media only screen and (max-width: 950px) {
+p {text-align: center;}
+
+  #leftframeDiv {width: 510px;
+                 float: none;
+                 position: static;}
+
+
+  #rightframeDiv {float: none;}
+
+  #menuBox {width: 510px;
+            height: 140px;
+            margin-bottom: 50px;}
+
+  #menuBox li {width: 223px;
+               float: left;
+               padding: 8px 16px;
+               text-align: center;}
+
+  .logo {width: 400px;
+         margin: 15px auto;}
+
+
+  #wrap {width: 510px;
+         margin-left: auto;}
+
+  #menuBox li:first-of-type:hover {border-radius: 10px 0 0 0;}
+  #menuBox li:nth-of-type(2):hover {border-radius: 0 10px 0 0;}
+  #menuBox li:nth-of-type(3):hover {border-radius: 0 0px 0 10px;}
+  #menuBox li:last-of-type:hover {border-radius: 0 0 10px 0px;}
+}
+
+</style>
+<script>
+
+function Addication() {
+  var onoff = document.getElementById("rightgraphBox2");
+
+  if (onoff.style.display == 'none') {
+    onoff.style.display = 'block';
+    document.getElementById("textspan").innerText = " 삭제";}
+  else {onoff.style.display = 'none';
+    document.getElementById("textspan").innerText = " 추가";}
+}
+
+
+function pfizer() {
+document.getElementById('inoculatorTotal').innerText = '1,779,866';
+document.getElementById('mildcaseTotal').innerText = '0.5%'
+document.getElementById('seriouscaseTotal').innerText = '800';
+document.getElementById('deathTotal').innerText = '153';
+
+document.getElementsByClassName('PlusNum')[0].innerText = '+66,007';
+document.getElementsByClassName('PlusNum')[1].innerText = '-';
+document.getElementsByClassName('PlusNum')[2].innerText = '+3';
+document.getElementsByClassName('PlusNum')[3].innerText = '+1';
+
+document.getElementById('today').innerText = '73건';
+document.getElementById('todaydeath').innerText = '0명';
+
+document.getElementById('yesterdaytoday').innerText = '137';
+document.getElementById('weektoday').innerText = '52';
+document.getElementById('yesterdaydeath').innerText = '1';
+document.getElementById('weekdeath').innerText = '2';
+}
+
+function astrazeneca() {
+  document.getElementById('inoculatorTotal').innerText = '731,949';
+  document.getElementById('mildcaseTotal').innerText = '4.7%'
+  document.getElementById('seriouscaseTotal').innerText = '1322';
+  document.getElementById('deathTotal').innerText = '87';
+
+  document.getElementsByClassName('PlusNum')[0].innerText = '+19,483';
+  document.getElementsByClassName('PlusNum')[1].innerText = '-';
+  document.getElementsByClassName('PlusNum')[2].innerText = '+8';
+  document.getElementsByClassName('PlusNum')[3].innerText = '+2';
+
+  document.getElementById('today').innerText = '548건';
+  document.getElementById('todaydeath').innerText = '2명';
+
+  document.getElementById('yesterdaytoday').innerText = '1,146';
+  document.getElementById('weektoday').innerText = '260';
+  document.getElementById('yesterdaydeath').innerText = '2';
+  document.getElementById('weekdeath').innerText = '0';
+}
+
+
+
+function moderna() {
+document.getElementById('inoculatorTotal').innerText = '-';
+document.getElementById('mildcaseTotal').innerText = '-';
+document.getElementById('seriouscaseTotal').innerText = '-';
+document.getElementById('deathTotal').innerText = '-';
+
+document.getElementsByClassName('PlusNum')[0].innerText = '-';
+document.getElementsByClassName('PlusNum')[1].innerText = '-';
+document.getElementsByClassName('PlusNum')[2].innerText = '-';
+document.getElementsByClassName('PlusNum')[3].innerText = '-';
+
+document.getElementById('today').innerText = '-';
+document.getElementById('todaydeath').innerText = '-';
+
+document.getElementById('yesterdaytoday').innerText = '-';
+document.getElementById('weektoday').innerText = '-';
+document.getElementById('yesterdaydeath').innerText = '-';
+document.getElementById('weekdeath').innerText = '-';
+}
+
+function janssen() {
+  document.getElementById('inoculatorTotal').innerText = '750,918';
+  document.getElementById('mildcaseTotal').innerText = '0.07%'
+  document.getElementById('seriouscaseTotal').innerText = '40';
+  document.getElementById('deathTotal').innerText = '1';
+
+  document.getElementsByClassName('PlusNum')[0].innerText = '170,953';
+  document.getElementsByClassName('PlusNum')[1].innerText = '-';
+  document.getElementsByClassName('PlusNum')[2].innerText = '+7';
+  document.getElementsByClassName('PlusNum')[3].innerText = '+1';
+
+  document.getElementById('today').innerText = '580건';
+  document.getElementById('todaydeath').innerText = '1명';
+
+  document.getElementById('yesterdaytoday').innerText = '167';
+  document.getElementById('weektoday').innerText = '-';
+  document.getElementById('yesterdaydeath').innerText = '0';
+  document.getElementById('weekdeath').innerText = '-';
+}
+
+function pf_inoculatorgraph1() {
+document.getElementById('graphimg1').style.backgroundImage = "url('graph/pf_inoculator.png')";
+}
+
+function pf_mildgraph1() {
+document.getElementById('graphimg1').style.backgroundImage = "url('graph/pf_mildcase.png')";
+}
+
+function pf_deathgraph1() {
+document.getElementById('graphimg1').style.backgroundImage = "url('graph/pf_death.png')";
+}
+
+
+
+
+function az_inoculatorgraph1() {
+document.getElementById('graphimg1').style.backgroundImage = "url('graph/az_inoculator.png')";
+}
+
+function az_mildgraph1() {
+document.getElementById('graphimg1').style.backgroundImage = "url('graph/az_mildcase.png')";
+}
+
+function az_deathgraph1() {
+document.getElementById('graphimg1').style.backgroundImage = "url('graph/az_death.png')";
+}
+
+
+
+
+function m_inoculatorgraph1() {
+document.getElementById('graphimg1').style.backgroundImage = "url('graph/nodata.png')";
+}
+
+function m_mildgraph1() {
+document.getElementById('graphimg1').style.backgroundImage = "url('graph/nodata.png')";
+}
+
+function m_deathgraph1() {
+document.getElementById('graphimg1').style.backgroundImage = "url('graph/nodata.png')";
+}
+
+
+
+
+function j_inoculatorgraph1() {
+document.getElementById('graphimg1').style.backgroundImage = "url('graph/j_inoculator.png')";
+}
+
+function j_mildgraph1() {
+document.getElementById('graphimg1').style.backgroundImage = "url('graph/j_mildcase.png')";
+}
+
+function j_deathgraph1() {
+document.getElementById('graphimg1').style.backgroundImage = "url('graph/j_death.png')";
+}
+
+
+
+
+
+
+
+function pf_inoculatorgraph2() {
+document.getElementById('graphimg2').style.backgroundImage = "url('graph/pf_inoculator.png')";
+}
+
+function pf_mildgraph2() {
+document.getElementById('graphimg2').style.backgroundImage = "url('graph/pf_mildcase.png')";
+}
+
+function pf_deathgraph2() {
+document.getElementById('graphimg2').style.backgroundImage = "url('graph/pf_death.png')";
+}
+
+
+
+
+function az_inoculatorgraph2() {
+document.getElementById('graphimg2').style.backgroundImage = "url('graph/az_inoculator.png')";
+}
+
+function az_mildgraph2() {
+document.getElementById('graphimg2').style.backgroundImage = "url('graph/az_mildcase.png')";
+}
+
+function az_deathgraph2() {
+document.getElementById('graphimg2').style.backgroundImage = "url('graph/az_death.png')";
+}
+
+
+
+
+function m_inoculatorgraph2() {
+document.getElementById('graphimg2').style.backgroundImage = "url('graph/nodata.png')";
+}
+
+function m_mildgraph2() {
+document.getElementById('graphimg2').style.backgroundImage = "url('graph/nodata.png')";
+}
+
+function m_deathgraph2() {
+document.getElementById('graphimg2').style.backgroundImage = "url('graph/nodata.png')";
+}
+
+
+
+
+function j_inoculatorgraph2() {
+document.getElementById('graphimg2').style.backgroundImage = "url('graph/j_inoculator.png')";
+}
+
+function j_mildgraph2() {
+document.getElementById('graphimg2').style.backgroundImage = "url('graph/j_mildcase.png')";
+}
+
+function j_deathgraph2() {
+document.getElementById('graphimg2').style.backgroundImage = "url('graph/j_death.png')";
+}
+
+</script>
+
+</head>
+
+<body>
+<div id="wrap">
+  <div id="leftframeDiv">
+    <image class="logo" src="logo.png">
+    <div id="menuBox">
+      <ul>
+       <li class="vaccinemenu" onclick="pfizer()">화이자</li>
+       <li class="vaccinemenu" onclick="astrazeneca()">아스트라제네카</li>
+       <li class="vaccinemenu" onclick="moderna()">모더나</li>
+       <li class="vaccinemenu" onclick="janssen()">얀센</li>
+      </ul>
+    </div>
+    </div>
+  <div id="rightframeDiv">
+    <div id="rightTopBox">
+      <div class="divwrap">
+        <span class="type">접종자</span>
+        <span id="inoculatorTotal">1,779,866</span>
+        <div class="PlusNum">+66,007</div>
+      </div>
+      <div class="divwrap">
+        <span class="type">경증 부작용</span>
+        <span id="mildcaseTotal">0.5%</span>
+        <div class="PlusNum">-</div>
+      </div>
+      <div class="divwrap">
+       <span class="type">중증 부작용</span>
+       <span id="seriouscaseTotal">800</span>
+       <div class="PlusNum">+3</div>
+      </div>
+      <div class="divwrap">
+        <span class="type">사망</span>
+        <span id="deathTotal">153</span>
+        <div class="PlusNum">+1</div>
+      </div>
+    </div>
+    <div id="rightCenterBox">
+      <div class="top">
+        <div id="left">
+          <div>
+            <span>오늘 부작용 수</span>
+            <span id="today" class="daySNum">73건</span>
+          </div>
+          <div id="daywrap">
+           <div class="dateNum">
+             <span class="daySNum">어제</span>
+             <span id="yesterdaytoday">137</span>
+           </div>
+          </div>
+          <div id="daywrap">
+            <div class="dateNum">
+              <span class="daySNum">1주 전</span>
+              <span id="weektoday">52</span>
+            </div>
+          </div>
+        </div>
+        <div id="right">
+          <div>
+            <span>사망자</span>
+            <span id="todaydeath" class="daySNum">0명</span>
+          </div>
+          <div id="daywrap">
+           <div class="dateNum">
+             <span class="daySNum">어제</span>
+             <span id="yesterdaydeath">1</span>
+           </div>
+          </div>
+          <div id="daywrap">
+            <div class="dateNum">
+              <span class="daySNum">1주 전</span>
+              <span id="weekdeath">2</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="margin"></div>
+      <div id="rightgraphBox">
+        <input type="button" class="menuButton" value="화이자 접종자수" onclick="pf_inoculatorgraph1()">
+        <input type="button" class="menuButton" value="화이자 부작용수" onclick="pf_mildgraph1()">
+        <input type="button" class="menuButton" value="화이자 사망자수" onclick="pf_deathgraph1()">
+        <input type="button" class="menuButton" value="아스트라 접종자수" onclick="az_inoculatorgraph1()">
+        <input type="button" class="menuButton" value="아스트라 부작용수" onclick="az_mildgraph1()">
+        <input type="button" class="menuButton" value="아스트라 사망자수" onclick="az_deathgraph1()">
+        <input type="button" class="menuButton" value="모더나 접종자수" onclick="m_inoculatorgraph1()">
+        <input type="button" class="menuButton" value="모더나 부작용수" onclick="m_mildgraph1()">
+        <input type="button" class="menuButton" value="모더나 사망자수" onclick="m_deathgraph1()">
+        <input type="button" class="menuButton" value="얀센 접종자수" onclick="j_inoculatorgraph1()">
+        <input type="button" class="menuButton" value="얀센 부작용수" onclick="j_mildgraph1()">
+        <input type="button" class="menuButton" value="얀센 사망자수" onclick="j_deathgraph1()">
+       <div id="graphimg1">
+       </div>
+     </div>
+
+      <div id="rightgraphBox2">
+        <input type="button" class="menuButton" value="화이자 접종자수" onclick="pf_inoculatorgraph2()">
+        <input type="button" class="menuButton" value="화이자 부작용수" onclick="pf_mildgraph2()">
+        <input type="button" class="menuButton" value="화이자 사망자수" onclick="pf_deathgraph2()">
+        <input type="button" class="menuButton" value="아스트라 접종자수" onclick="az_inoculatorgraph2()">
+        <input type="button" class="menuButton" value="아스트라 부작용수" onclick="az_mildgraph2()">
+        <input type="button" class="menuButton" value="아스트라 사망자수" onclick="az_deathgraph2()">
+        <input type="button" class="menuButton" value="모더나 접종자수" onclick="m_inoculatorgraph2()">
+        <input type="button" class="menuButton" value="모더나 부작용수" onclick="m_mildgraph2()">
+        <input type="button" class="menuButton" value="모더나 사망자수" onclick="m_deathgraph2()">
+        <input type="button" class="menuButton" value="얀센 접종자수" onclick="j_inoculatorgraph2()">
+        <input type="button" class="menuButton" value="얀센 부작용수" onclick="j_mildgraph2()">
+        <input type="button" class="menuButton" value="얀센 사망자수" onclick="j_deathgraph2()">
+        <div id="graphimg2">
+        </div>
+      </div>
+
+
+    <div id="graphAddicationBox" onclick="Addication()">
+      <div>
+        <span>+그래프</span><span id="textspan"> 추가</span>
+      </div>
+    </div>
+    <div id="locationVaccineChartBox">
+      <div id="mapdiv">
+       <div id="popup" onclick="off()">
+         <p class="header"></p>
+       </div>
+       <div class="which" id="Seoul">
+         <div class="popupdiv" id="Seoul_popup">
+           <h2>서울</h2>
+           <div>
+             <span>인구</span><span>9,588,711</span>
+           </div>
+           <div>
+             <span>누계</span><span>589,320</span>
+           </div>
+           <div>
+             <span>일계</span><span>52,848</span>
+           </div>
+             <p>6.1%</p>
+         </div>
+       </div>
+       <div class="which" id="Incheon">
+         <div class="popupdiv" id="Incheon_popup">
+           <h2>인천</h2>
+           <div>
+             <span>인구</span><span>2,936,214</span>
+           </div>
+           <div>
+             <span>누계</span><span>170,783</span>
+           </div>
+           <div>
+             <span>일계</span><span>-</span>
+           </div>
+             <p>5.8%</p>
+         </div>
+       </div>
+       <div class="which" id="Gyeonggi">
+         <div class="popupdiv" id="Gyeonggi_popup">
+           <h2>경기</h2>
+           <div>
+             <span>인구</span><span>13,465,837</span>
+           </div>
+           <div>
+             <span>누계</span><span>732,660</span>
+           </div>
+           <div>
+             <span>일계</span><span>67,631</span>
+           </div>
+             <p>5.4%</p>
+         </div>
+       </div>
+       <div class="which" id="Gangwon">
+         <div class="popupdiv" id="Gangwon_popup">
+           <h2>강원도</h2>
+           <div>
+             <span>인구</span><span>1,536,175</span>
+           </div>
+           <div>
+             <span>누계</span><span>114,125</span>
+           </div>
+           <div>
+             <span>일계</span><span>8,361</span>
+           </div>
+             <p>7.4%</p>
+         </div>
+       </div>
+       <div class="which" id="Chungcheongnam">
+         <div class="popupdiv" id="Chungcheongnam_popup">
+           <h2>충청남도</h2>
+           <div>
+             <span>인구</span><span>2,116,452</span>
+           </div>
+           <div>
+             <span>누계</span><span>156,476</span>
+           </div>
+           <div>
+             <span>일계</span><span>14,024</span>
+           </div>
+             <p>7.3%</p>
+         </div>
+       </div>
+       <div class="which" id="Chungcheongbuk">
+         <div class="popupdiv" id="Chungcheongbuk_popup">
+           <h2>충청북도</h2>
+           <div>
+             <span>인구</span><span>1,596,303</span>
+           </div>
+           <div>
+             <span>누계</span><span>112,192</span>
+           </div>
+           <div>
+             <span>일계</span><span>8,836</span>
+           </div>
+             <p>7%</p>
+         </div>
+       </div>
+       <div class="which" id="Daejeon">
+         <div class="popupdiv" id="Daejeon_popup">
+           <h2>대전</h2>
+           <div>
+             <span>인구</span><span>1,457,619</span>
+           </div>
+           <div>
+             <span>누계</span><span>87,412</span>
+           </div>
+           <div>
+             <span>일계</span><span>5,818</span>
+           </div>
+             <p>5.9%</p>
+         </div>
+       </div>
+       <div class="which" id="Gyeongsangbuk">
+         <div class="popupdiv" id="Gyeongsangbuk_popup">
+           <h2>경상북도</h2>
+           <div>
+             <span>인구</span><span>2,635,896</span>
+           </div>
+           <div>
+             <span>누계</span><span>193,160</span>
+           </div>
+           <div>
+             <span>일계</span><span>9,496</span>
+           </div>
+             <p>7.3%</p>
+         </div>
+       </div>
+       <div class="which" id="Jeollabuk">
+         <div class="popupdiv" id="Jeollabuk_popup">
+           <h2>전라북도</h2>
+           <div>
+             <span>인구</span><span>1,796,331</span>
+           </div>
+           <div>
+             <span>누계</span><span>150,476</span>
+           </div>
+           <div>
+             <span>일계</span><span>9,646</span>
+           </div>
+             <p>8.3%</p>
+         </div>
+       </div>
+       <div class="which" id="Jeollanam">
+         <div class="popupdiv" id="Jeollanam_popup">
+           <h2>전라남도</h2>
+           <div>
+             <span>인구</span><span>1,844,148</span>
+           </div>
+           <div>
+             <span>누계</span><span>186,489</span>
+           </div>
+           <div>
+             <span>일계</span><span>8,836</span>
+           </div>
+             <p>10.1%</p>
+         </div>
+       </div>
+       <div class="which" id="Gwangju">
+         <div class="popupdiv" id="Gwangju_popup">
+           <h2>광주</h2>
+           <div>
+             <span>인구</span><span>1,444,787</span>
+           </div>
+           <div>
+             <span>누계</span><span>103,802</span>
+           </div>
+           <div>
+             <span>일계</span><span>7,372</span>
+           </div>
+             <p>7.1%</p>
+         </div>
+       </div>
+       <div class="which" id="Gyeongsangnam">
+         <div class="popupdiv" id="Gyeongsangnam_popup">
+           <h2>경상남도</h2>
+           <div>
+             <span>인구</span><span>3,329,623</span>
+           </div>
+           <div>
+             <span>누계</span><span>225,901</span>
+           </div>
+           <div>
+             <span>일계</span><span>17,216</span>
+           </div>
+             <p>6.7%</p>
+         </div>
+       </div>
+       <div class="which" id="Daegu">
+         <div class="popupdiv" id="Daegu_popup">
+           <h2>대구</h2>
+           <div>
+             <span>인구</span><span>2,406,296</span>
+           </div>
+           <div>
+             <span>누계</span><span>135,212</span>
+           </div>
+           <div>
+             <span>일계</span><span>8,572</span>
+           </div>
+             <p>5.6%</p>
+         </div>
+       </div>
+       <div class="which" id="Ulsan">
+         <div class="popupdiv" id="Ulsan_popup">
+           <h2>울산</h2>
+           <div>
+             <span>인구</span><span>1,136,017</span>
+           </div>
+           <div>
+             <span>누계</span><span>58,936</span>
+           </div>
+           <div>
+             <span>일계</span><span>5,017</span>
+           </div>
+             <p>5.1%</p>
+         </div>
+       </div>
+       <div class="which" id="Busan">
+         <div class="popupdiv" id="Busan_popup">
+           <h2>부산</h2>
+           <div>
+             <span>인구</span><span>3,369,704</span>
+           </div>
+           <div>
+             <span>누계</span><span>197,115</span>
+           </div>
+           <div>
+             <span>일계</span><span>15,342</span>
+           </div>
+             <p>5.8%</p>
+         </div>
+       </div>
+       <div class="which" id="Jeju">
+         <div class="popupdiv" id="Jeju_popup">
+           <h2>제주</h2>
+           <div>
+             <span>인구</span><span>674,877</span>
+           </div>
+           <div>
+             <span>누계</span><span>40,516</span>
+           </div>
+           <div>
+             <span>일계</span><span>2,843</span>
+           </div>
+             <p>6%</p>
+         </div>
+       </div>
+
+      </div>
+    </div>
+    <p>6/15일 기준 / 2차 접종완료 수치</p>
+  </div>
+</div>
+
+</body>
+
+</html>
